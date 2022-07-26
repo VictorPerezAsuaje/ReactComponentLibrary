@@ -1,7 +1,7 @@
 {
   "name": "dashboard-components",
   "version": "0.1.0",
-  "homepage": "https://victorperezasuaje.github.io/reactcomponentlibrary",
+  "homepage": "https://victorperezasuaje.github.io/ReactComponentLibrary",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
@@ -46,6 +46,7 @@
       "last 1 safari version"
     ]
   },
+  
   "devDependencies": {
     "autoprefixer": "^10.4.7",
     "gh-pages": "^4.0.0",

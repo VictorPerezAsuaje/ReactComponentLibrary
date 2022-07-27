@@ -4,9 +4,6 @@ import Heading, { HeadingType } from "../../../components/Atoms/Heading/Heading"
 import Card from "../../../components/Molecules/Card/Card";
 import Code from "../../components/Code";
 
-
-
-
 export default function Buttons() {
   const [solidBtnLightness, setSolidBtnLightness] = useState("500");
 
@@ -19,12 +16,6 @@ export default function Buttons() {
     <Button content="button" type="button" extraCssClass={"bg-blue-${solidBtnLightness} text-white mr-3"} rounded uppercase />
     <Button content="button" type="button" extraCssClass={"bg-violet-${solidBtnLightness} text-white mr-3"} rounded uppercase />
   `
-
-  const onChangeLightnessSelector = (lightness:string) => {
-    if(lightness === "" || lightness === "normal") setSolidBtnLightness("500")
-    if(lightness === "light") setSolidBtnLightness("400")
-    if(lightness === "dark") setSolidBtnLightness("600")
-  }
 
   return (
     <>

@@ -11,9 +11,7 @@ interface ICode{
 export default function Code(props:ICode) {
     const { content, language, containerCssClass } = props;
 
-    useEffect(() => {
-        Prism.highlightAll();
-        }, []);
+    useEffect(() => Prism.highlightAll(), [props]);
 
     return (
         <div className={"Code " + containerCssClass === undefined ? "" : containerCssClass}>

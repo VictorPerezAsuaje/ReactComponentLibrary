@@ -1,17 +1,17 @@
-import { ListItem, ListItemProps } from "./ListItem";
-
+import React, { CSSProperties } from "react";
 
 interface IListProps{
-    listItems:ListItemProps[],
+    children?:React.ReactNode,
     listCssClass?:string,
+    extraStyle?:CSSProperties
 }
 
 export default function List(props:IListProps) {
-    const { listItems, listCssClass } = props;
+    const { children, listCssClass, extraStyle } = props;
 
     return (
-        <ul className={props.listCssClass === undefined ? "list-disc pl-10 my-3" : props.listCssClass}>
-            {listItems.map(item => <ListItem key={item.content} content={item.content} itemCssClass={item.content} iconSrc={item.iconSrc} />)}
+        <ul className={listCssClass === undefined ? "list-disc pl-10 my-3" : listCssClass} style={extraStyle}>
+            {children}
         </ul>
     )
 }

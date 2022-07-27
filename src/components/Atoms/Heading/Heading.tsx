@@ -6,7 +6,7 @@ interface HeadingProps{
 }
 
 const renderHeading = (hProps:HeadingProps) => {
-    let baseCssClass = "inline-block font-bold text-slate-900 tracking-tight dark:text-slate-200 mb-5";
+    let baseCssClass = "inline-block font-bold text-slate-900 tracking-tight dark:text-slate-200 mb-5 w-full";
 
     switch(hProps.type){
         case HeadingType.h3:

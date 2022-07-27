@@ -1,14 +1,17 @@
-export type ListItemProps = {
+import { CSSProperties } from "react";
+
+export interface IListItemProps{
     content:string,
     itemCssClass?:string,
-    iconSrc?:string
+    iconSrc?:string,
+    extraStyle?:CSSProperties
 }
 
-export function ListItem(props: ListItemProps) {
-    const {content, itemCssClass, iconSrc} = props;
+export function ListItem(props: IListItemProps) {
+    const {content, itemCssClass, iconSrc, extraStyle } = props;
 
     return (
-    <li className={itemCssClass + (iconSrc === undefined ? "" : " flex flex-row items-center mb-3")}>
+    <li className={itemCssClass + (iconSrc === undefined ? "" : " flex flex-row items-center")} style={extraStyle}>
         {iconSrc === undefined ? "" : <img src={iconSrc} alt="" className="mr-3 w-8" /> }
         {content}
     </li>);

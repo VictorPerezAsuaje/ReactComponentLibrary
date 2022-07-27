@@ -11,7 +11,7 @@ export default function SideBar() {
 
     return (
         <>
-            <aside className={showSidebar ? "w-64 h-screen fixed top-0 lg:translate-x-0" : "w-64 h-screen fixed top-0 -translate-x-64 lg:translate-x-0"} aria-label="Sidebar">
+            <aside className={showSidebar ? "w-64 h-screen fixed top-0 lg:translate-x-0 px-3 z-50" : "w-64 h-screen fixed top-0 -translate-x-64 lg:translate-x-0 px-3 z-50"} aria-label="Sidebar">
                 <button className="left-64 m-6 absolute bg-slate-50 rounded-full p-2 lg:hidden" type="button" onClick={() => handleShowSidebar()}>{showSidebar ? "←" : "→" }</button>
 
                 <div className="overflow-y-auto py-4 px-3 bg-gray-50 rounded dark:bg-gray-800 h-screen pt-10 flex flex-col scrollable">

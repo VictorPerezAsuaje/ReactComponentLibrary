@@ -9,14 +9,16 @@ interface ICode{
 }
 
 export default function Code(props:ICode) {
+    const { content, language, containerCssClass } = props;
+
     useEffect(() => {
         Prism.highlightAll();
         }, []);
 
     return (
-        <div className={"Code my-5" + props.containerCssClass === undefined ? "" : props.containerCssClass}>
+        <div className={"Code " + containerCssClass === undefined ? "" : containerCssClass}>
             <pre className="rounded">
-                <code className={`language-${props.language}`}>{props.content}</code>
+                <code className={`lang-${language}`}>{content}</code>
             </pre>
         </div>
     )

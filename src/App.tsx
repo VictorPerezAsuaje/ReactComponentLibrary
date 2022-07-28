@@ -22,7 +22,7 @@ export default function App() {
     {loading === false ?
     (
     <div>
-      <HashRouter basename='/ReactComponentLibrary'>
+      <BrowserRouter basename='/'>
       <SideBar /> 
       <div className="flex">
           <div className="flex-1 lg:w-5/6 w-full lg:ml-64 px-10 py-14 overflow-auto">      
@@ -41,7 +41,7 @@ export default function App() {
             </Routes>            
           </div>        
       </div>
-      </HashRouter>
+      </BrowserRouter>
     </div>
     )
     : 

@@ -1,6 +1,6 @@
 import './App.scss';
 import { useState, useEffect } from 'react'
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, HashRouter } from "react-router-dom";
 
 /* Pages */
 
@@ -22,7 +22,7 @@ export default function App() {
     {loading === false ?
     (
     <div>
-      <BrowserRouter basename='/ReactComponentLibrary'>
+      <HashRouter basename='/ReactComponentLibrary'>
       <SideBar /> 
       <div className="flex">
           <div className="flex-1 lg:w-5/6 w-full lg:ml-64 px-10 py-14 overflow-auto">      
@@ -41,7 +41,7 @@ export default function App() {
             </Routes>            
           </div>        
       </div>
-      </BrowserRouter>
+      </HashRouter>
     </div>
     )
     : 

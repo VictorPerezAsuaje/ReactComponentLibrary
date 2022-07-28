@@ -22,12 +22,11 @@ export default function App() {
     {loading === false ?
     (
     <div>
-      <BrowserRouter>
+      <BrowserRouter basename='/ReactComponentLibrary'>
       <SideBar /> 
       <div className="flex">
           <div className="flex-1 lg:w-5/6 w-full lg:ml-64 px-10 py-14 overflow-auto">      
             <Routes>
-              <BrowserRouter basename='/ReactComponentLibrary' />
               <Route path='*' element={<Navigate to="/" replace />} />
               <Route path="/">
                 <Route index element={<Info />} />

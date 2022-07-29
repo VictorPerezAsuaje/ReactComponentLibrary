@@ -63,7 +63,7 @@ export default function ListPreview() {
       let obj;
   
       if(useCards)
-        obj = <Card key={`card_${item.content}`} extraCssClass="flex flex-row items-center w-64" extraStyle={{ marginBottom: `${verticalSpacing}${unit}` }}><ListItem key={item.content} content={item.content} iconSrc={useIcons ? item.iconSrc : undefined} extraStyle={{ color: color }} /></Card>
+        obj = <Card key={`card_${item.content}`} cssClass="flex flex-row items-center w-64" extraStyle={{ marginBottom: `${verticalSpacing}${unit}` }}><ListItem key={item.content} content={item.content} iconSrc={useIcons ? item.iconSrc : undefined} extraStyle={{ color: color }} /></Card>
       else
         obj = <ListItem key={item.content} content={item.content} iconSrc={useIcons ? item.iconSrc : undefined} extraStyle={{ color: color,  marginBottom: `${verticalSpacing}${unit}`}}  />
   

@@ -4,7 +4,9 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   safelist: [
-    {pattern: /bg-(red|rose|amber|emerald|teal|blue|violet)-(400|500|600)/}
+    {pattern: /bg-(red|rose|amber|emerald|teal|blue|violet)-(400|500|600)/},
+    {pattern: /border-(red|rose|amber|emerald|teal|blue|violet)-(400|500|600)/},
+    {pattern: /text-(red|rose|amber|emerald|teal|blue|violet)-(400|500|600)/}
   ],
   theme: {
     extend: {},

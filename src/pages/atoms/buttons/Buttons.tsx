@@ -89,11 +89,11 @@ export default function Buttons() {
     }, [taglineVisible]);
 
     <div className="flex gap-4 flex-wrap justify-around my-10 relative">
-      <Button content={<img src="https://cdn.pixabay.com/photo/2022/07/25/15/18/cat-7344042_960_720.jpg" />} type="button" colorConfig={{ bgColor: Color.transparent, borderColor: Color.transparent }} onClickHandler={() => setTagLineVisible(true)} />
+      <Button content={<Card><img src="https://cdn.pixabay.com/photo/2022/07/25/15/18/cat-7344042_960_720.jpg" alt="an amazing loving cat 💘"/></Card>} type="button" colorConfig={{ bgColor: Color.transparent, borderColor: Color.transparent }} onClickHandler={() => setTagLineVisible(true)} />
 
       { 
         taglineVisible ? 
-        <Card cssClass="absolute z-10 bg-white/75 bottom-0 w-1/3 text-center font-medium">
+        <Card cssClass="absolute z-10 bg-white/75 bottom-10 w-1/3 text-center font-medium">
           Love me, human! ♥😺
         </Card> 
         : ""
@@ -250,10 +250,10 @@ export default function Buttons() {
           <Heading type={HeadingType.h3} content="INTERACTIVE DEMO" />
           <hr />
           <div className="flex gap-4 flex-wrap justify-around my-10 relative">
-            <Button content={<img src="https://cdn.pixabay.com/photo/2022/07/25/15/18/cat-7344042_960_720.jpg" alt="an amazing loving cat 💘" />} type="button" colorConfig={{ bgColor: Color.transparent, borderColor: Color.transparent }} onClickHandler={() => setTagLineVisible(true)} />
+            <Button content={<Card><img src="https://cdn.pixabay.com/photo/2022/07/25/15/18/cat-7344042_960_720.jpg" alt="an amazing loving cat 💘"/></Card>} type="button" colorConfig={{ bgColor: Color.transparent, borderColor: Color.transparent }} onClickHandler={() => setTagLineVisible(true)} />
             {
               taglineVisible ? 
-              <Card cssClass="absolute z-10 bg-white/75 bottom-0 w-1/3 text-center font-medium">
+              <Card cssClass="absolute z-10 bg-white/75 bottom-10 w-1/3 text-center font-medium">
                 Love me, human! ♥😺
               </Card> : ""
             }

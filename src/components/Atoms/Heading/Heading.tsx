@@ -7,7 +7,7 @@ interface HeadingProps{
 
 const renderHeading = (props:HeadingProps) => {
     const { content, type, cssClass } = props;
-    let baseCssClass = `inline-block font-bold text-slate-900 tracking-tight dark:text-slate-200 mb-5 w-full ${cssClass === undefined ? "" : cssClass }`;
+    let baseCssClass = `inline-block font-bold text-slate-600 tracking-tight dark:text-slate-200 mb-5 w-full ${cssClass === undefined ? "" : cssClass }`;
 
     switch(type){
         case HeadingType.h3:

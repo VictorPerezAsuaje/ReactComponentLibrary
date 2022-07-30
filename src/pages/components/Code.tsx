@@ -16,7 +16,7 @@ export default function Code(props:ICode) {
     return (
         <div className={"Code " + containerCssClass === undefined ? "" : containerCssClass}>
             <pre className="rounded">
-                <code className={`lang-${language}`}>{content}</code>
+                <code className={`lang-${language}`} style={{ whiteSpace: 'pre-wrap' }}>{content}</code>
             </pre>
         </div>
     )

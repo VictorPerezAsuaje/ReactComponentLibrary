@@ -2,6 +2,7 @@ import Heading, { HeadingType } from "../components/Atoms/Heading/Heading"
 import List from "../components/Atoms/List/List"
 import { ListItem } from "../components/Atoms/List/ListItem";
 import ListPreview from "./components/ListPreview";
+import TailwindCssConfig from "./components/TailwindCssConfig";
 
 
 export default function Info() {
@@ -14,7 +15,8 @@ export default function Info() {
       <p>The whole project is built using the following libraries: </p>
       <List>{ librariesUsed.map(item => <ListItem key={item} content={item} />) }</List>
       <p>So, in case you are interested in using or copying any of these components, you should be aware that you may need to install those dependencies or adapt the code. Also, I will do my best to make interactive components however, you will be able to see the code for certain components as follows:</p>
-      <ListPreview />      
+      <ListPreview /> 
+      <TailwindCssConfig />     
     </article>
   )
 }

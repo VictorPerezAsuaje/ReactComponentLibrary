@@ -4,8 +4,8 @@ import Heading, { HeadingType } from "../../../components/Atoms/Heading/Heading"
 import Switch from "../../../components/Atoms/Input/Switch";
 import Alert from "../../../components/Molecules/Alert/Alert";
 import Card from "../../../components/Molecules/Card/Card";
-import Code from "../../components/Code";
-import LightnessSelector from "../../components/LightnessSelector";
+import Code from "../../internalComponents/Code";
+import LightnessSelector from "../../internalComponents/LightnessSelector";
 import { ReactComponent as FacebookIcon } from "../../../assets/facebook.svg";
 import { ReactComponent as MailIcon } from "../../../assets/mail.svg";
 import { ReactComponent as InstagramIcon } from "../../../assets/instagram.svg";

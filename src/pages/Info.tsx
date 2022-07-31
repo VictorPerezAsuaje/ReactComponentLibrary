@@ -1,8 +1,8 @@
 import Heading, { HeadingType } from "../components/Atoms/Heading/Heading"
 import List from "../components/Atoms/List/List"
 import { ListItem } from "../components/Atoms/List/ListItem";
-import ListPreview from "./components/ListPreview";
-import TailwindCssConfig from "./components/TailwindCssConfig";
+import ListPreview from "./internalComponents/ListPreview";
+import TailwindCssConfig from "./internalComponents/TailwindCssConfig";
 
 
 export default function Info() {

@@ -7,14 +7,14 @@ import { BrowserRouter, Routes, Route, Navigate, HashRouter } from "react-router
 import Info from './pages/Info'
 
 /* Components */
-import SideBar from './pages/components/SideBar';
+import SideBar from './pages/internalComponents/SideBar';
 import Buttons from './pages/atoms/buttons/Buttons';
 
 export default function App() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    setTimeout(() => setLoading(false), 1000)
+    setLoading(false)
   }, [])
 
   return (

@@ -1,13 +1,15 @@
+
 export enum HeadingType{ h1, h2, h3, h4, h5, subtitle }
+
 interface HeadingProps{
-    content:string,
+    content:React.ReactNode,
     type:HeadingType,
     cssClass?:string
 }
 
 const renderHeading = (props:HeadingProps) => {
     const { content, type, cssClass } = props;
-    let baseCssClass = `inline-block font-bold text-slate-600 tracking-tight dark:text-slate-200 mb-5 w-full ${cssClass === undefined ? "" : cssClass }`;
+    let baseCssClass = `flex flex-wrap font-bold text-slate-600 tracking-tight dark:text-slate-200 mb-5 w-full ${cssClass === undefined ? "" : cssClass }`;
 
     switch(type){
         case HeadingType.h3:

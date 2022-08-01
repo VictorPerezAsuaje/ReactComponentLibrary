@@ -1,6 +1,6 @@
 import './App.scss';
 import { useState, useEffect } from 'react'
-import { BrowserRouter, Routes, Route, Navigate, HashRouter } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 /* Pages */
 
@@ -9,6 +9,7 @@ import Info from './pages/Info'
 /* Components */
 import SideBar from './pages/internalComponents/SideBar';
 import Buttons from './pages/atoms/buttons/Buttons';
+import Badges from './pages/atoms/badges/Badges';
 
 export default function App() {
   const [loading, setLoading] = useState(true)
@@ -31,6 +32,7 @@ export default function App() {
               <Route path="/">
                 <Route index element={<Info />} />
                 <Route path="atoms">       
+                  <Route path="badges" element={<Badges />} />
                   <Route path="buttons" element={<Buttons />} />
                 </Route>
                 <Route path="molecules">

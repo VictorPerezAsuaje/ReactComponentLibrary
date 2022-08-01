@@ -13,7 +13,7 @@ export default function Info() {
       <Heading content="General information" type={HeadingType.h1} />
       <p>This project intended to help me both learn React with Typescript and serve as a repository of components to use in future projects.</p>
       <p>The whole project is built using the following libraries: </p>
-      <List>{ librariesUsed.map(item => <ListItem key={item} content={item} />) }</List>
+      <List cssClass="list-disc pl-10 my-3" >{ librariesUsed.map(item => <ListItem key={item} content={item} />) }</List>
       <p>So, in case you are interested in using or copying any of these components, you should be aware that you may need to install those dependencies or adapt the code. Also, I will do my best to make interactive components however, you will be able to see the code for certain components as follows:</p>
       <ListPreview /> 
       <TailwindCssConfig />     

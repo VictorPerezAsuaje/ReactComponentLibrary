@@ -2,15 +2,15 @@ import React, { CSSProperties } from "react";
 
 interface IListProps{
     children?:React.ReactNode,
-    listCssClass?:string,
+    cssClass?:string,
     extraStyle?:CSSProperties
 }
 
 export default function List(props:IListProps) {
-    const { children, listCssClass, extraStyle } = props;
+    const { children, cssClass, extraStyle } = props;
 
     return (
-        <ul className={listCssClass === undefined ? "list-disc pl-10 my-3" : listCssClass} style={extraStyle}>
+        <ul className={cssClass} style={extraStyle}>
             {children}
         </ul>
     )

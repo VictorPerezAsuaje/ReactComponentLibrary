@@ -1,5 +1,6 @@
-import Button, { Border, Lightness } from "../../components/Atoms/Button/Button";
+import Button from "../../components/Atoms/Button/Button";
 import Card from "../../components/Molecules/Card/Card";
+import { Border, Lightness } from "../../helpers/colorHelper";
 
 interface ILightnessSelectorProps{
     onClickHandler(lightness:Lightness): any

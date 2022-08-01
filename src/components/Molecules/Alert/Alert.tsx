@@ -1,4 +1,5 @@
-import Button, { Color } from "../../Atoms/Button/Button";
+import { Color } from "../../../helpers/colorHelper";
+import Button from "../../Atoms/Button/Button";
 
 interface IAlertProps{
     children:React.ReactNode,

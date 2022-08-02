@@ -5,7 +5,7 @@ import Heading, { HeadingType } from '../../../components/Atoms/Heading/Heading'
 import Alert from '../../../components/Molecules/Alert/Alert';
 import Card from '../../../components/Molecules/Card/Card'
 import { getLightNessText } from '../../../helpers/lightnessHelper';
-import Code from '../../internalComponents/Code';
+import Code from '../../../internalComponents/Code';
 
 interface ISolidButtonProps{
     lightness:Lightness

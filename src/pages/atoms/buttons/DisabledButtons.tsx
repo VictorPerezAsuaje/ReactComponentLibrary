@@ -1,7 +1,7 @@
 import Button from '../../../components/Atoms/Button/Button'
 import Heading, { HeadingType } from '../../../components/Atoms/Heading/Heading'
 import Card from '../../../components/Molecules/Card/Card'
-import Code from '../../internalComponents/Code';
+import Code from '../../../internalComponents/Code';
 
 
 export default function DisabledButtons() {

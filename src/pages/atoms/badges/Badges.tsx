@@ -6,7 +6,7 @@ import Card from '../../../components/Molecules/Card/Card';
 import List from '../../../components/Atoms/List/List';
 import { ListItem } from '../../../components/Atoms/List/ListItem';
 import { Border, Color } from '../../../helpers/colorHelper';
-import Code from '../../internalComponents/Code';
+import Code from '../../../internalComponents/Code';
 import { useState } from 'react';
 
 export default function Badges() {

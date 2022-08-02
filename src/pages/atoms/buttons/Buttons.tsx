@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Lightness } from "../../../helpers/colorHelper";
 import Heading, { HeadingType } from "../../../components/Atoms/Heading/Heading";
-import LightnessSelector from "../../internalComponents/LightnessSelector";
+import LightnessSelector from "../../../internalComponents/LightnessSelector";
 
 import SolidButtons from "./SolidButtons";
 import OutlineButtons from "./OutlineButtons";

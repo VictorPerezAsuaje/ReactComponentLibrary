@@ -4,7 +4,7 @@ import { Color, Lightness } from "../../../helpers/colorHelper";
 import Heading, { HeadingType } from '../../../components/Atoms/Heading/Heading'
 import Card from '../../../components/Molecules/Card/Card'
 import { getLightNessText } from '../../../helpers/lightnessHelper';
-import Code from '../../internalComponents/Code';
+import Code from '../../../internalComponents/Code';
 
 interface IClickEventsButtonsProps{
     lightness:Lightness
@@ -18,10 +18,16 @@ export default function ClickEventsButtons(props:IClickEventsButtonsProps) {
     const clickEventDemo = `
     const [randomColor, setRandomColor] = useState(Color.blue);
 
-    <Button content="CLICK ME!" type="button" cssClass="hover:animate-pulse" colorConfig={{ bgColor: Color.${randomColor}, bgLightness: Lightness.${getLightNessText(lightness)}, borderColor: Color.${randomColor} === Color.transparent ? Color.blue : Color.${randomColor} }} onClickHandler={() => ChangeRandomColor()} />
+    const onClickChangeRandomColor = () => {
+        const index:number= Math.floor(Math.random() * Object.keys(Color).length);
+        const value:Color= Object.values(Color)[index]; 
+        setRandomColor(value);
+    }
+    
+    <Button content="CLICK ME!" type="button" cssClass="hover:animate-pulse" colorConfig={{ bgColor: Color.${randomColor}, bgLightness: Lightness.${getLightNessText(lightness)}, borderColor: Color.${randomColor} === Color.transparent ? Color.blue : Color.${randomColor} }} onClickHandler={() => onClickChangeRandomColor()} />
   `;
 
-    const ChangeRandomColor = () => {
+    const onClickChangeRandomColor = () => {
         const index:number= Math.floor(Math.random() * Object.keys(Color).length);
         const value:Color= Object.values(Color)[index]; 
         setRandomColor(value);
@@ -35,7 +41,7 @@ export default function ClickEventsButtons(props:IClickEventsButtonsProps) {
             <Heading type={HeadingType.h3} content="INTERACTIVE DEMO" />
             <hr />
             <div className="flex gap-4 flex-wrap justify-around my-10 relative">
-                <Button content="CLICK ME!" type="button" cssClass="hover:animate-pulse" colorConfig={{ bgColor: randomColor, bgLightness: lightness as Lightness, borderColor: randomColor === Color.transparent ? Color.blue : randomColor }} onClickHandler={() => ChangeRandomColor()} />
+                <Button content="CLICK ME!" type="button" cssClass="hover:animate-pulse" colorConfig={{ bgColor: randomColor, bgLightness: lightness as Lightness, borderColor: randomColor === Color.transparent ? Color.blue : randomColor }} onClickHandler={() => onClickChangeRandomColor()} />
             </div>
             <hr className="mb-10" />
             <Code language="javascript" content={clickEventDemo} />

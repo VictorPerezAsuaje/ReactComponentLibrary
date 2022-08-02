@@ -1,0 +1,39 @@
+import React, { CSSProperties } from 'react';
+import { HeadingType } from '../Atoms/Heading/Heading';
+
+export interface IHeaderProps{
+    id:string,
+    text:string,
+    level:number,
+    style?:CSSProperties,
+    onContentChange(id:string, content?:string):Function
+}
+
+export function HeaderBlock(props: IHeaderProps) {
+    const { id, text, level, style, onContentChange } = props;
+    let baseCssClass = "outline-none ";
+    switch (level) {
+        case HeadingType.h3:
+        default:
+            baseCssClass += " text-xl";
+            return <h3 id={id} className={baseCssClass} style={style} contentEditable="true" onInput={(e) =>{
+                console.log("Id: " + id + " - content: " + e.currentTarget.textContent)
+                onContentChange(id, e.currentTarget.textContent === null ? "" : e.currentTarget.textContent)
+            } }>{text}</h3>;
+
+        case HeadingType.h1:
+            baseCssClass += " text-3xl";
+            return <h1 id={id} className={baseCssClass} style={style} contentEditable="true">{text}</h1>;
+
+        case HeadingType.h2:
+            baseCssClass += " text-2xl";
+            return <h2 id={id} className={baseCssClass} style={style} contentEditable="true">{text}</h2>;
+
+        case HeadingType.h4:
+            baseCssClass += " text-lg";
+            return <h4 id={id} className={baseCssClass} style={style} contentEditable="true">{text}</h4>;
+
+        case HeadingType.h5:
+            return <h5 id={id} className={baseCssClass} style={style} contentEditable="true">{text}</h5>;
+    }
+}

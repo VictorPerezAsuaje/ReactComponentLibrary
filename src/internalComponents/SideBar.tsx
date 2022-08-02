@@ -175,6 +175,14 @@ export default function SideBar() {
                             </Link>
                         </li>
                     </ul>
+                    <ul className="py-4 my-4 space-y-2 border-y border-gray-200 ">
+                        <h4 className="font-medium">Templates</h4>
+                        <li>
+                            <Link to="/templates/texteditor" className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 ">
+                                <span className="flex-1 ml-3 whitespace-nowrap">TextEditor</span>
+                            </Link>
+                        </li>
+                    </ul>
                 </div>
             </aside>
         </>

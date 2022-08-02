@@ -7,9 +7,10 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Info from './pages/Info'
 
 /* Components */
-import SideBar from './pages/internalComponents/SideBar';
+import SideBar from './internalComponents/SideBar';
 import Buttons from './pages/atoms/buttons/Buttons';
 import Badges from './pages/atoms/badges/Badges';
+import TextEditor from './components/Template/TextEditor';
 
 export default function App() {
   const [loading, setLoading] = useState(true)
@@ -38,6 +39,9 @@ export default function App() {
                 <Route path="molecules">
                 </Route>
                 <Route path="organisms">
+                </Route>
+                <Route path="templates">
+                  <Route path="texteditor" element={<TextEditor />} />
                 </Route>
               </Route>
             </Routes>            

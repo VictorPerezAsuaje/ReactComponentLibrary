@@ -6,7 +6,7 @@ import Switch from '../../../components/Atoms/Input/Switch';
 import Alert from '../../../components/Molecules/Alert/Alert';
 import Card from '../../../components/Molecules/Card/Card'
 import { getLightNessText } from '../../../helpers/lightnessHelper';
-import Code from '../../internalComponents/Code';
+import Code from '../../../internalComponents/Code';
 
 interface IOutlineButtonProps{
     lightness:Lightness

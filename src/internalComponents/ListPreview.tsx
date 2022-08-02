@@ -1,9 +1,9 @@
-import List from "../../components/Atoms/List/List";
-import { ListItem, IListItemProps } from "../../components/Atoms/List/ListItem";
+import List from "../components/Atoms/List/List";
+import { ListItem, IListItemProps } from "../components/Atoms/List/ListItem";
 import { useState } from "react"
-import Heading, { HeadingType } from "../../components/Atoms/Heading/Heading";
+import Heading, { HeadingType } from "../components/Atoms/Heading/Heading";
 import Code from "./Code";
-import Card from "../../components/Molecules/Card/Card";
+import Card from "../components/Molecules/Card/Card";
 
 const listPreview:IListItemProps[] = [
   {content: "Administration", iconSrc: "https://www.svgrepo.com/show/332992/database.svg" },

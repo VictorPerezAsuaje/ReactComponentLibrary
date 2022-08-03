@@ -82,14 +82,14 @@ export default function TextEditor() {
                 return {...x, order: direction === "up" ? x.order - 1 : x.order + 1 }
 
             return x;
-        }))
+        }).sort((x1, x2) => x1.order - x2.order))
     }
 
     const onDeleteBlockHandler = (id:string, orderBlockDeleted:number) => {
         setBlocks(blocks.filter(x => x.id !== id).map(x => {
             if(x.order > orderBlockDeleted) return {...x, order: x.order - 1}
             return x;
-        }));
+        }).sort((x1, x2) => x1.order - x2.order));
     }
 
     return (

@@ -5,8 +5,8 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   variants: {
-    textColor: ['responsive', 'hover', 'focus', 'group-hover'],
-    backgroundColor: ['hover', 'focus', 'group-hover']
+    textColor: ['responsive', 'hover', 'focus', 'group-hover', 'peer', 'group-focus'],
+    backgroundColor: ['responsive', 'hover', 'focus', 'group-hover', 'peer', 'group-focus']
   },
   safelist: [
     {pattern: /bg-(red|rose|amber|emerald|teal|blue|violet)-(400|500|600)/},

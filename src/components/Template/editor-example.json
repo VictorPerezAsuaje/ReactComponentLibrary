@@ -2,6 +2,7 @@
     {
         "id" : "jfFactm2J1",
         "type" : "header",
+        "order": 1,
         "data" : {
             "text" : "Text Editor",
             "level" : 2
@@ -10,13 +11,15 @@
     {
         "id" : "Z_ZV0QFm5o",
         "type" : "paragraph",
+        "order": 2,
         "data" : {
-            "text" : "Hey. Meet the <b>new Editor</b>. On this page you can see it <i>in action</i> — try to edit this text."
+            "text" : "Hey. Meet the <b>new Editor</b> inspired by <a href='https://wordpress.org/gutenberg/'>Wordpress GutenBerg blocks</a> and basically copied the idea from <a href='https://editorjs.io/'>EditorJS</a>, merely adapting to make it work on React. On this page you can see it <i>in action</i> — try to edit this text."
         }
     },
     {
         "id" : "S2gyB9IEgb",
         "type" : "header",
+        "order": 3,
         "data" : {
             "text" : "Key features",
             "level" : 3
@@ -25,6 +28,7 @@
     {
         "id" : "Hs-CISR4fF",
         "type" : "list",
+        "order": 4,
         "data" : {
             "style" : "unordered",
             "items" : [
@@ -37,6 +41,7 @@
     {
         "id" : "4V4TJ4TAb8",
         "type" : "header",
+        "order": 5,
         "data" : {
             "text" : "What does it mean «block-styled editor»",
             "level" : 3
@@ -45,20 +50,25 @@
     {
         "id" : "wDKq8OWoJO",
         "type" : "paragraph",
+        "order": 6,
         "data" : {
-            "text" : "Workspace in classic editors is made of a single contenteditable element, used to create different HTML markups. Editor.js <mark class=\"cdx-marker\">workspace consists of separate Blocks: paragraphs, headings, images, lists, quotes, etc</mark>. Each of them is an independent contenteditable element (or more complex structure) provided by Plugin and united by Editor's Core."
+            "text" : "Workspace in classic editors is made of a single contenteditable element, used to create different HTML markups. The workspace consists of separate Blocks: paragraphs, headings, images, lists, quotes, etc</mark>. Each of them is an independent contenteditable element. Inside blocks there's a sanitizer to protect you from certain attacks."
         }
     },
     {
-        "id" : "E2IGknIjKO",
-        "type" : "paragraph",
+        "id" : "iz8px-qx8Y",
+        "type" : "image",
+        "order": 7,
         "data" : {
-            "text" : "There are dozens of <a href=\"https://github.com/editor-js\">ready-to-use Blocks</a> and the <a href=\"https://editorjs.io/creating-a-block-tool\">simple API</a> for creation any Block you need. For example, you can implement Blocks for Tweets, Instagram posts, surveys and polls, CTA-buttons and even games."
+            "url" : "https://cdn.pixabay.com/photo/2020/04/30/03/26/rufous-5111261_960_720.jpg",
+            "caption" : "",
+            "alternativeText": ""
         }
     },
     {
         "id" : "x7U78AXmYG",
         "type" : "header",
+        "order": 8,
         "data" : {
             "text" : "What does it mean clean data output",
             "level" : 3
@@ -67,20 +77,15 @@
     {
         "id" : "oJ7Fdd-Erj",
         "type" : "paragraph",
+        "order": 9,
         "data" : {
-            "text" : "Classic WYSIWYG-editors produce raw HTML-markup with both content data and content appearance. On the contrary, Editor.js outputs JSON object with data of each Block. You can see an example below"
-        }
-    },
-    {
-        "id" : "iNBHss_W2p",
-        "type" : "paragraph",
-        "data" : {
-            "text" : "Given data can be used as you want: render with HTML for <code class=\"inline-code\">Web clients</code>, render natively for <code class=\"inline-code\">mobile apps</code>, create markup for <code class=\"inline-code\">Facebook Instant Articles</code> or <code class=\"inline-code\">Google AMP</code>, generate an <code class=\"inline-code\">audio version</code> and so on."
+            "text" : "Classic WYSIWYG-editors produce raw HTML-markup with both content data and content appearance. On the contrary, this editor outputs JSON object with data of each Block."
         }
     },
     {
         "id" : "Ns0mYlaDs-",
         "type" : "paragraph",
+        "order": 10,
         "data" : {
             "text" : "Clean data is useful to sanitize, validate and process on the backend."
         }
@@ -88,26 +93,15 @@
     {
         "id" : "hOAmhk1Ies",
         "type" : "delimiter",
+        "order": 11,
         "data" : {}
     },
     {
         "id" : "LXT0b7n4eu",
         "type" : "paragraph",
+        "order": 12,
         "data" : {
-            "text" : "We have been working on this project more than three years. Several large media projects help us to test and debug the Editor, to make it's core more stable. At the same time we significantly improved the API. Now, it can be used to create any plugin for any task. Hope you enjoy. 😏"
-        }
-    },
-    {
-        "id" : "iz8px-qx8Y",
-        "type" : "image",
-        "data" : {
-            "file" : {
-                "url" : "https://codex.so/public/app/img/external/codex2x.png"
-            },
-            "caption" : "",
-            "withBorder" : false,
-            "stretched" : false,
-            "withBackground" : false
+            "text" : "I know I've said this already, but I can no enfasize it enough, please check EditorJS platform for a plain Javascript example of this editor as they have made an amazing work on it."
         }
     }
 ]

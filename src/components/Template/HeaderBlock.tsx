@@ -15,25 +15,22 @@ export function HeaderBlock(props: IHeaderProps) {
     switch (level) {
         case HeadingType.h3:
         default:
-            baseCssClass += " text-xl";
-            return <h3 id={id} className={baseCssClass} style={style} contentEditable="true" onInput={(e) =>{
-                console.log("Id: " + id + " - content: " + e.currentTarget.textContent)
-                onContentChange(id, e.currentTarget.textContent === null ? "" : e.currentTarget.textContent)
-            } }>{text}</h3>;
+            baseCssClass += " text-xl peer";
+            return <h3 id={id} className={baseCssClass} style={style} contentEditable="true" suppressContentEditableWarning={true} onInput={(e) => onContentChange(id, e.currentTarget.textContent === null ? "" : e.currentTarget.textContent)}>{text}</h3>;
 
         case HeadingType.h1:
-            baseCssClass += " text-3xl";
-            return <h1 id={id} className={baseCssClass} style={style} contentEditable="true">{text}</h1>;
+            baseCssClass += " text-3xl peer";
+            return <h1 id={id} className={baseCssClass} style={style} contentEditable="true" suppressContentEditableWarning={true} onInput={(e) => onContentChange(id, e.currentTarget.textContent === null ? "" : e.currentTarget.textContent)}>{text}</h1>;
 
         case HeadingType.h2:
-            baseCssClass += " text-2xl";
-            return <h2 id={id} className={baseCssClass} style={style} contentEditable="true">{text}</h2>;
+            baseCssClass += " text-2xl peer";
+            return <h2 id={id} className={baseCssClass} style={style} contentEditable="true" suppressContentEditableWarning={true} onInput={(e) => onContentChange(id, e.currentTarget.textContent === null ? "" : e.currentTarget.textContent)}>{text}</h2>;
 
         case HeadingType.h4:
-            baseCssClass += " text-lg";
-            return <h4 id={id} className={baseCssClass} style={style} contentEditable="true">{text}</h4>;
+            baseCssClass += " text-lg peer";
+            return <h4 id={id} className={baseCssClass} style={style} contentEditable="true" suppressContentEditableWarning={true} onInput={(e) => onContentChange(id, e.currentTarget.textContent === null ? "" : e.currentTarget.textContent)}>{text}</h4>;
 
         case HeadingType.h5:
-            return <h5 id={id} className={baseCssClass} style={style} contentEditable="true">{text}</h5>;
+            return <h5 id={id} className={baseCssClass + " peer"} style={style} contentEditable="true" suppressContentEditableWarning={true} onInput={(e) => onContentChange(id, e.currentTarget.textContent === null ? "" : e.currentTarget.textContent)}>{text}</h5>;
     }
 }

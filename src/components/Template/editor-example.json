@@ -13,7 +13,7 @@
         "type" : "paragraph",
         "order": 2,
         "data" : {
-            "text" : "Hey. Meet the <b>new Editor</b> inspired by <a href='https://wordpress.org/gutenberg/'>Wordpress GutenBerg blocks</a> and basically copied the idea from <a href='https://editorjs.io/'>EditorJS</a>, merely adapting to make it work on React. On this page you can see it <i>in action</i> — try to edit this text."
+            "text" : "Hey. Meet the new Editor inspired by Wordpress GutenBerg blocks and EditorJS. On this page you can see it in action — try to edit this text."
         }
     },
     {

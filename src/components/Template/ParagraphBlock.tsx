@@ -1,15 +1,15 @@
-import { CSSProperties, useState } from 'react'
+import { CSSProperties } from 'react'
 import { internalHTMLInterpreter } from '../../helpers/internalHTMLInterpreter'
 
 export interface IParagraphProps{
     id:string,
     text:string,
     style?:CSSProperties,
-    onContentChange(id:string, content?:string):Function
+    onContentChange(e:object, id:string, content?:string):Function
 }
 
 export const ParagraphBlock = (props:IParagraphProps) => {
     const { id, text, style, onContentChange } = props;
 
-    return (<p key={id} contentEditable="true" style={style} className="outline-none peer" suppressContentEditableWarning={true} onInput={(e) => onContentChange(id, e.currentTarget.textContent === null ? "" : e.currentTarget.textContent)}>{internalHTMLInterpreter(text)}</p>)
+    return (<p contentEditable="true" style={style} className="outline-none peer" suppressContentEditableWarning={true} onBlur={(e) => onContentChange(e, id, e.currentTarget.textContent === null ? "" : e.currentTarget.textContent)}>{internalHTMLInterpreter(text)}</p>)
 }

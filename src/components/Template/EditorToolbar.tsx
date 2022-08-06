@@ -57,11 +57,11 @@ function TopEditorToolbar(props:ITopEditorToolbarProps){
 
     return (
         <div className={'absolute -top-16 right-0 translate-y-1/2 rounded flex transition-all ease-in-out duration-200 gap-0.5 items-center bg-slate-300 ' + (blockSelected ? "pointer-events-auto opacity-80 hover:opacity-100" : "pointer-events-none opacity-0")}>
-            <Button content="b" type="button" colorConfig={{ bgColor: Color.transparent, borderColor: Color.transparent }} shape = { Border.square } cssClass="text-md px-3 hover:bg-slate-100 hover:text-slate-800 font-bold" hoverable onClickHandler={() => document.execCommand("bold")} />
-            <Button content="i" type="button" colorConfig={{ bgColor: Color.transparent, borderColor: Color.transparent }} shape = { Border.square } cssClass="text-md px-3 hover:bg-slate-100 hover:text-slate-500 italic" hoverable onClickHandler={() => document.execCommand("italic")} />
-            <Button content="u" type="button" colorConfig={{ bgColor: Color.transparent, borderColor: Color.transparent }} shape = { Border.square } cssClass="text-md px-3 hover:bg-slate-100 hover:text-slate-500 underline" hoverable onClickHandler={() => document.execCommand("underline")} />
-            <Button content="link" type="button" colorConfig={{ bgColor: Color.transparent, borderColor: Color.transparent }} shape = { Border.square } cssClass="text-md px-3 hover:bg-slate-100 hover:text-slate-500" hoverable />
-            <Button content="clear" type="button" colorConfig={{ bgColor: Color.transparent, borderColor: Color.transparent }} shape = { Border.square } cssClass="text-md px-3 hover:bg-slate-100 hover:text-slate-500" hoverable onClickHandler={() => document.execCommand('removeFormat')} />
+            <Button content="b" type="button" colorConfig={{ bgColor: Color.transparent, borderColor: Color.transparent }} shape = { Border.square } cssClass="text-md px-3 hover:bg-slate-100 hover:text-slate-800 font-bold" hoverable onClickHandler={() => document.execCommand("bold")} disabled />
+            <Button content="i" type="button" colorConfig={{ bgColor: Color.transparent, borderColor: Color.transparent }} shape = { Border.square } cssClass="text-md px-3 hover:bg-slate-100 hover:text-slate-500 italic" hoverable onClickHandler={() => document.execCommand("italic")} disabled />
+            <Button content="u" type="button" colorConfig={{ bgColor: Color.transparent, borderColor: Color.transparent }} shape = { Border.square } cssClass="text-md px-3 hover:bg-slate-100 hover:text-slate-500 underline" hoverable onClickHandler={() => document.execCommand("underline")} disabled />
+            <Button content="link" type="button" colorConfig={{ bgColor: Color.transparent, borderColor: Color.transparent }} shape = { Border.square } cssClass="text-md px-3 hover:bg-slate-100 hover:text-slate-500" hoverable disabled />
+            <Button content="clear" type="button" colorConfig={{ bgColor: Color.transparent, borderColor: Color.transparent }} shape = { Border.square } cssClass="text-md px-3 hover:bg-slate-100 hover:text-slate-500" hoverable onClickHandler={() => document.execCommand('removeFormat')} disabled />
         </div>
     )
 }

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import data from './editor-example.json'
 import Heading, { HeadingType } from '../Atoms/Heading/Heading'
 import { HeaderBlock, IHeaderProps } from './HeaderBlock'
@@ -9,6 +9,7 @@ import { IImageBlockProps, ImageBlock } from './ImageBlock'
 import Button from '../Atoms/Button/Button'
 import { v4 as uuidv4 } from 'uuid';
 import { EditorToolbar } from './EditorToolbar'
+import ErrorBoundary from '../../internalComponents/ErrorBoundary'
 
 interface IBlockProps{
     id:string,
@@ -42,25 +43,26 @@ function Block(props:IBlockProps) {
 
 
 export default function TextEditor() {
-    const [blocks, setBlocks] = useState(data);
     const [selectedBlockId, setSelectedBlockId] = useState<string>("")
     const [jsonVisible, setJsonVisible] = useState(false);
+    const [blocks, setBlocks] = useState(data);
 
     const onContentChange = (e:object, id:string, content?:string) => {
         // API call ? 
         // Alter setBlocks ?
         setBlocks(blocks.map(x => {
-            if(x.id !== id) return x;
-            
-            switch(x.type){
-                case "header":
-                    return {...x, data: { text: content ?? "", level: x.data.level ?? 3 }};
-                case "paragraph":
-                    return {...x, data: { text: content ?? ""}}
-                default:
-                    return x
+                if(x.id !== id) return x;
+                
+                switch(x.type){
+                    case "header":
+                        return {...x, data: { text: content ?? "", level: x.data.level ?? 3 }};
+                    case "paragraph":
+                        return {...x, data: { text: content ?? "" }}
+                    default:
+                        return x
+                }
             }
-        }));
+        ));
     }
 
     const onOrderChange = (direction:string, currentPosition:number) => {
@@ -118,22 +120,27 @@ export default function TextEditor() {
 
         setBlocks([...oldBlocks, newBlock].sort((x1, x2) => x1.order - x2.order));
     }
-
+    
     return (
         <>
             <Heading content="BLOCK-BASED TEXT EDITOR" type={HeadingType.h2} cssClass="justify-center" />
-            <span className='flex justify-end'><Button content="SHOW JSON" type="button" onClickHandler={() => setJsonVisible(!jsonVisible)} /></span>
+            <span className='flex justify-end'>
+                <Button content="SHOW JSON" type="button" onClickHandler={() => setJsonVisible(!jsonVisible)} />
+                <a href={`data:text/json;chatset=utf-8,${encodeURIComponent(JSON.stringify(blocks))}`} download="blocks.json" className='font-medium flex justify-center items-center relative py-2 px-4 rounded bg-blue-500 text-white ml-3'>EXPORT</a>
+            </span>
             <pre className={jsonVisible ? "h-[10%] overflow-y-auto" : "hidden"}>{JSON.stringify(blocks, null, 2)}</pre>
             <hr className="m-10"/>
-            <div id="textEditor" className='shadow-md rounded p-5 min-h-screen' >
-                {
-                    blocks.sort((x1, x2) => x1.order - x2.order).map(block => 
-                    <div className={'lg:w-1/2 w-3/4 relative m-auto mb-3 border p-3 group rounded hover:border-blue-500/50 transition-all ease-in-out duration-200 ' + (selectedBlockId === block.id ? "selected mb-16 mt-14 border-blue-500" : "border-transparent")} onClick={() => setSelectedBlockId(block.id)}>
-                        <Block key={"block_"+block.id} id={block.id} type={block.type} data={block.data} onContentChange={onContentChange} />
-                        <EditorToolbar key={"toolbar_"+block.id} blockId={block.id} blockOrder={block.order} blockSelected={selectedBlockId === block.id} onChangeOrderHandler={onOrderChange} onDeleteBlockHandler={onDeleteBlockHandler} onAddBlockHandler={onAddBlockHandler} />
-                    </div>)
-                }
-            </div>
+            <ErrorBoundary>
+                <div id="textEditor" className='shadow-md rounded p-5 min-h-screen' >
+                    {
+                        blocks.sort((x1, x2) => x1.order - x2.order).map(block => 
+                        <div key={"block_"+block.id} className={'lg:w-1/2 w-3/4 relative m-auto mb-3 border p-3 group rounded hover:border-blue-500/50 transition-all ease-in-out duration-200 ' + (selectedBlockId === block.id ? "selected mb-16 mt-14 border-blue-500" : "border-transparent")} onClick={() => setSelectedBlockId(block.id)}>
+                            <Block id={block.id} type={block.type} data={block.data} onContentChange={onContentChange} />
+                            <EditorToolbar key={"toolbar_"+block.id} blockId={block.id} blockOrder={block.order} blockSelected={selectedBlockId === block.id} onChangeOrderHandler={onOrderChange} onDeleteBlockHandler={onDeleteBlockHandler} onAddBlockHandler={onAddBlockHandler} />
+                        </div>)
+                    }
+                </div>
+            </ErrorBoundary>
         </>
     )
 }

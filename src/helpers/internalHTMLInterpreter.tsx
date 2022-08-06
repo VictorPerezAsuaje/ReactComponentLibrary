@@ -1,6 +1,7 @@
 export function internalHTMLInterpreter(text:string):any[]{
     let sanitizedText = [];
     const textArr = text.split(/<|>/g)
+    
     for(let i = 0; i < textArr.length; i++){
         if(i % 2 === 0){
             sanitizedText.push(textArr[i]);
